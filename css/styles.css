@@ -6,6 +6,9 @@
   --footer-bg-color: #2f303a;
   --text-logo-color: #000000;
   --primary-btn-color: #f5f4fa;
+  --card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  --card-set-gap: 30px;
 }
 
 body {
@@ -16,7 +19,22 @@ body {
   letter-spacing: 0.03em;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .list {
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
 
@@ -24,26 +42,57 @@ body {
   text-decoration: none;
 }
 
+.main-header {
+  border-bottom: 1px solid #ececec;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
 /* Логотип */
 
 .logo {
-  color: var(--text-logo-color);
+  display: inline-block;
 
+  color: var(--text-logo-color);
   font-family: Raleway, sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
 }
 
-.logo > span {
+.logo > .accent {
   color: var(--accent-color);
+}
+
+.margin-logo {
+  margin-right: 93px;
 }
 
 /* Навігація сайту */
 
-.site-nav .link {
-  color: var(--primary-text-color);
+.site-nav {
+  display: flex;
+}
 
+.site-nav > .item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.site-nav .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  color: var(--primary-text-color);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -61,6 +110,14 @@ body {
   color: var(--accent-color);
 }
 
+.contact-nav {
+  display: flex;
+}
+
+.contact-nav > .item:not(:last-child) {
+  margin-right: 50px;
+}
+
 .contact-nav .link {
   color: var(--title-text-color);
 
@@ -73,26 +130,116 @@ body {
 /* Герой */
 
 .hero {
+  margin-bottom: 94px;
   background-color: var(--footer-bg-color);
   color: var(--primary-bg-color);
+  text-align: center;
 }
 
 .hero-title {
+  margin-top: 0;
+  margin-bottom: var(--card-set-gap);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 /* Секції */
 
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.section.no-padding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.section.bg-color {
+  background-color: var(--primary-btn-color);
+}
+
+.section-items.no-margin {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.section-items {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--card-set-gap));
+  margin-left: calc(-1 * var(--card-set-gap));
+}
+
+.section-items > .item {
+  flex-basis: calc(100% / 3 - var(--card-set-gap));
+  margin-top: var(--card-set-gap);
+  margin-left: var(--card-set-gap);
+}
+
+.section-items > .item.block {
+  flex-basis: calc(100% / 4 - var(--card-set-gap));
+}
+
+.section-items.no-margin > .item.block {
+  margin-top: 0;
+}
+
+.section-title {
+  margin-top: 0;
+  margin-bottom: 50px;
+
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+}
+
+.section-items .title {
+  margin-top: 0;
+  margin-bottom: 10px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+
 .section-items .text {
+  margin-top: 0;
+  margin-bottom: 0;
+
   color: var(--title-text-color);
 
   font-size: 14px;
   line-height: 1.71;
+}
+
+.card {
+  background-color: var(--primary-bg-color);
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+
+  text-align: center;
+
+  box-shadow: var(--card-shadow);
+}
+
+.card-content {
+  padding-top: var(--card-set-gap);
+  padding-bottom: var(--card-set-gap);
+}
+
+.section-items .name {
+  margin-top: 0;
+  margin-bottom: 10px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
 }
 
 .section-items .text.desc {
@@ -100,30 +247,16 @@ body {
   line-height: 1.19;
 }
 
-.section-items .title {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.14;
-  text-transform: uppercase;
-}
-
-.section-items .name {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.19;
-}
-
-.section-title {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
-}
-
 /* Підвал */
 
 footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-color: var(--footer-bg-color);
+}
+
+.logo.white {
+  margin-bottom: 20px;
 }
 
 .logo.white,
@@ -134,8 +267,13 @@ footer {
 .address {
   font-style: inherit;
 }
+.address-items > .item:not(:last-child) {
+  margin-bottom: 9px;
+}
 
 .address-items .link {
+  display: inline-block;
+
   color: rgba(255, 255, 255, 0.6);
 
   font-size: 14px;
@@ -149,10 +287,13 @@ footer {
 
 /* Кнопка */
 .btn {
+  padding: 10px 32px;
+
   background-color: var(--accent-color);
   color: var(--primary-bg-color);
   cursor: pointer;
   border: none;
+  border-radius: 4px;
 }
 
 .btn.primari {
@@ -171,6 +312,7 @@ footer {
 }
 
 .btn.secondary {
+  padding: 6px 22px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.62;
@@ -183,20 +325,57 @@ footer {
   color: var(--primary-bg-color);
 }
 
+/* Фільтер */
+
+.section .work-filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.work-filter > .item:not(:last-child) {
+  margin-right: 8px;
+}
+
 /* Роботи */
 
-.link > .title {
-  color: var(--primary-text-color);
+.work {
+  display: flex;
+  flex-wrap: wrap;
 
+  margin-top: calc(-1 * var(--card-set-gap));
+  margin-left: calc(-1 * var(--card-set-gap));
+}
+
+.work .card-content {
+  padding: 20px 24px;
+  text-align: left;
+}
+
+.work > .item {
+  flex-basis: calc(100% / 3 - var(--card-set-gap));
+  margin-top: var(--card-set-gap);
+  margin-left: var(--card-set-gap);
+}
+
+.link .title {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  color: var(--primary-text-color);
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
 }
 
-.link > .text {
-  color: var(--title-text-color);
+.link .text {
+  margin-top: 0;
+  margin-bottom: 0;
 
+  color: var(--title-text-color);
   font-size: 16px;
   line-height: 1.88;
 }
