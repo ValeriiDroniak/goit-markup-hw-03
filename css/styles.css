@@ -9,6 +9,8 @@
   --card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   --card-set-gap: 30px;
+  --section-padding: 94px;
+  --border-work: 1px solid #eeeeee;
 }
 
 body {
@@ -22,6 +24,7 @@ body {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 .container {
@@ -151,12 +154,12 @@ img {
 /* Секції */
 
 .section {
-  padding-top: 94px;
-  padding-bottom: 94px;
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
 }
 
 .section.no-padding {
-  padding-top: 0;
+  padding-top: var(--section-padding);
   padding-bottom: 0;
 }
 
@@ -215,24 +218,22 @@ img {
   margin-bottom: 0;
 
   color: var(--title-text-color);
-
   font-size: 14px;
   line-height: 1.71;
 }
 
-.card {
-  background-color: var(--primary-bg-color);
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-
-  text-align: center;
-
-  box-shadow: var(--card-shadow);
-}
+/* Команда */
 
 .card-content {
   padding-top: var(--card-set-gap);
   padding-bottom: var(--card-set-gap);
+  background-color: var(--primary-bg-color);
+}
+
+.section-items .card-content {
+  text-align: center;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 }
 
 .section-items .name {
@@ -277,7 +278,6 @@ footer {
   display: inline-block;
 
   color: rgba(255, 255, 255, 0.6);
-
   font-size: 14px;
   line-height: 1.71;
 }
@@ -353,7 +353,9 @@ footer {
 
 .work .card-content {
   padding: 20px 24px;
-  text-align: left;
+  border-left: var(--border-work);
+  border-right: var(--border-work);
+  border-bottom: var(--border-work);
 }
 
 .work > .item {
