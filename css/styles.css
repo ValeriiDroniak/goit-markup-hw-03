@@ -126,15 +126,21 @@ img {
 /* Герой */
 
 .hero {
-  margin-bottom: 94px;
+  padding-top: 200px;
+  padding-bottom: 200px;
+
   background-color: var(--footer-bg-color);
   color: var(--primary-bg-color);
   text-align: center;
 }
 
 .hero-title {
+  width: 700px;
   margin-top: 0;
   margin-bottom: var(--card-set-gap);
+  margin-left: auto;
+  margin-right: auto;
+
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
