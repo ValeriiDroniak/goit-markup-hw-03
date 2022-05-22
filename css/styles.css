@@ -87,6 +87,7 @@ img {
   margin-right: 50px;
 }
 
+.contact-nav .link,
 .site-nav .link {
   display: block;
   padding-top: 32px;
@@ -120,11 +121,6 @@ img {
 
 .contact-nav .link {
   color: var(--title-text-color);
-
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.02em;
 }
 
 /* Герой */
